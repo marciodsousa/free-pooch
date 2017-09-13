@@ -9,8 +9,8 @@ before_script:
   - npm install -g yarn
   - npm install -g webpack
 script:
-  -cd /client && yarn && webpack
-  -cd ../server && yarn
+  - cd /client && yarn && webpack
+  - cd ../server && yarn
 
 cache:
   directories:
