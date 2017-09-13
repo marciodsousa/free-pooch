@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-  - "7"
-
+- '7'
 sudo: enabled
 
-before_script:
-  - npm install -g yarn
-  - npm install -g webpack
+before_install:
+  - bash deploy/install.sh
 script:
-  - cd client && yarn && webpack
-  - cd ../server && yarn
+  - bash deploy/build.sh
+  - bash deploy/test.sh
+after_success:
+  - bash deploy/deploy.sh
 
 cache:
   directories:
-    - "client/node_modules"
-    - "server/node_modules"
+  - client/node_modules
+  - server/node_modules
   yarn: true
