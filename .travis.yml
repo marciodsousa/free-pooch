@@ -3,7 +3,7 @@ node_js:
 - '7'
 sudo: enabled
 addons:
-  ssh_known_hosts: 146.185.176.28
+  ssh_known_hosts: 146.185.133.5
 before_install:
 - bash deploy/install.sh
 script:

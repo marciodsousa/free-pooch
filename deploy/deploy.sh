@@ -4,7 +4,7 @@ set -x
 if [ $TRAVIS_BRANCH == 'master' ] ; then
     git init
         
-    git remote add deploy "root@146.185.176.28:/var/www/free-pooch"
+    git remote add deploy "root@146.185.133.5:/var/www/free-pooch"
     git config user.name "Travis CI"
     git config user.email "marciodesousa16+travisCI@gmail.com"
     
