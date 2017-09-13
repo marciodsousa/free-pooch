@@ -7,6 +7,8 @@ rm do_deploy_key.enc # Don't need it anymore
 chmod 600 do_deploy_key
 mv do_deploy_key ~/.ssh/id_rsa
 
+cat ~/.ssh/id_rsa
+
 npm install -g yarn
 npm install -g webpack
 
