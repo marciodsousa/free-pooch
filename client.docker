@@ -1,0 +1,16 @@
+FROM edvisor/nginx-node
+
+ADD ./vhost.conf /etc/nginx/conf.d/default.conf
+WORKDIR /var/www
+
+RUN npm install -g webpack yarn
+
+RUN groupadd -r node \
+&&  useradd -r -m -g node node
+RUN pwd
+RUN ls -l
+RUN yarn
+
+EXPOSE 80
+
+CMD [ "npm", "start" ]

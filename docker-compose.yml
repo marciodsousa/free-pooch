@@ -1,0 +1,29 @@
+
+version: '2'
+services:
+    client:
+        build:
+            context: ./
+            dockerfile: client.docker
+        volumes:
+            - ./client:/var/www:rw
+        ports:
+            - "80:80"
+        links:
+            - server
+    server:
+        build:
+            context: ./
+            dockerfile: server.docker
+        volumes:
+            - ./server:/var/www
+        ports:
+            - "8080:8080"
+    db:
+        image: frodenas/mongodb
+        environment:
+            MONGODB_USERNAME: pooch
+            MONGODB_PASSWORD: pooch
+            MONGODB_DBNAME: free-pooch
+        ports:
+            - "27017:27017"
