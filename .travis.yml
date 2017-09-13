@@ -2,18 +2,15 @@ language: node_js
 node_js:
 - '7'
 sudo: enabled
-
 addons:
   ssh_known_hosts: 146.185.176.28
-
 before_install:
-  - bash deploy/install.sh
+- bash deploy/install.sh
 script:
-  - bash deploy/build.sh
-  - bash deploy/test.sh
+- bash deploy/build.sh
+- bash deploy/test.sh
 after_success:
-  - bash deploy/deploy.sh
-
+- bash deploy/deploy.sh
 cache:
   directories:
   - client/node_modules
