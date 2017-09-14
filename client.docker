@@ -13,4 +13,4 @@ RUN yarn
 
 EXPOSE 80
 
-CMD [ "npm", "start" ]
+CMD [ "service", "nginx start" ]

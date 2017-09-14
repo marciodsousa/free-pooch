@@ -3,5 +3,5 @@
 
 cd /var/www && \
 rm -r free-pooch
-tar zxvf free-pooch.tgz -C . && \
+tar zxf free-pooch.tgz -C . && \
 rm free-pooch.tgz
