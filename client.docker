@@ -12,5 +12,3 @@ RUN ls -l
 RUN yarn
 
 EXPOSE 80
-
-CMD [ "service", "nginx start" ]
