@@ -17,4 +17,4 @@ set -x
 cd ..
 tar -czf free-pooch.tgz ./free-pooch && \
 scp free-pooch.tgz $REMOTE_USER@$REMOTE_HOST:$REMOTE_APP_DIR && \
-ssh $REMOTE_USER@$REMOTE_HOST 'bash -s' < ./deploy/untar.sh
+ssh $REMOTE_USER@$REMOTE_HOST 'bash -s' < ./free-pooch/deploy/untar.sh
