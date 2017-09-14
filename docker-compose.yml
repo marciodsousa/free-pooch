@@ -8,9 +8,22 @@ services:
         volumes:
             - ./client:/var/www:rw
         ports:
-            - "80:80"
+            - "80:3000"
+        environment:
+            - NODE_ENV=dev
         links:
             - server
+        command: >
+            sh -c '
+                if test -d node_modules; 
+                then 
+                echo node_modules_exists ; 
+                else 
+                cp -a /tmp/node_modules /var/www; 
+                fi && 
+                npm install --dev && 
+                node ./index.js
+            '
     server:
         build:
             context: ./
