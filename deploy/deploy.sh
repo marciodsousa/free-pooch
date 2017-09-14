@@ -15,5 +15,5 @@ set -x
 #     echo "Not deploying, since this branch isn't master."
 # fi
 
-tar -czf package.tgz . && \
+tar -czf package.tgz ./client/dist && \
 scp package.tgz root@146.185.133.5:/var/www/free-pooch
