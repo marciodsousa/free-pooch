@@ -16,5 +16,5 @@ set -x
 # fi
 cd ..
 tar -czf free-pooch.tgz ./free-pooch && \
-scp package.tgz $REMOTE_USER@$REMOTE_HOST:$REMOTE_APP_DIR && \
+scp free-pooch.tgz $REMOTE_USER@$REMOTE_HOST:$REMOTE_APP_DIR && \
 ssh $REMOTE_USER@$REMOTE_HOST 'bash -s' < ./deploy/untar.sh
