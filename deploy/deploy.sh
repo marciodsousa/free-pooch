@@ -14,6 +14,7 @@ set -x
 # else
 #     echo "Not deploying, since this branch isn't master."
 # fi
-ls ..
-tar -czf package.tgz ./client/dist && \
-scp package.tgz root@146.185.133.5:/var/www/free-pooch
+cd ..
+tar -czf free-pooch.tgz ./free-pooch && \
+scp package.tgz $REMOTE_USER@$REMOTE_HOST:$REMOTE_APP_DIR && \
+ssh $REMOTE_USER@$REMOTE_HOST 'bash -s' < ./deploy/untar.sh
