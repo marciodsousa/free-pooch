@@ -2,6 +2,15 @@ language: node_js
 node_js:
 - '7'
 sudo: enabled
+notifications:
+  email:
+    recipients:
+      - marciodesousa16@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always
+branches:
+  only:
+  - master
 addons:
   ssh_known_hosts: 146.185.133.5
 env:
