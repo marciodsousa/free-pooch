@@ -7,4 +7,4 @@ tar zxf free-pooch.tgz -C . && \
 rm free-pooch.tgz
 
 cd free-pooch
-docker-compose stop && docker-compose up
+docker-compose stop && docker-compose up -d
