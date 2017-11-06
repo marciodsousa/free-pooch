@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "myappuser",
-    "password": "myapppassword",
-    "database": "myappdb",
+    "username": "pooch",
+    "password": "pooch",
+    "database": "free-pooch",
     "host": "db",
-    "port": 5432,
-    "dialect": "postgres"
+    "port": 27017,
+    "dialect": "mongo"
   }
 }

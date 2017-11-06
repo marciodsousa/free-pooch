@@ -43,11 +43,11 @@ services:
       dockerfile: docker/api/Dockerfile.dev
     image: myapp-api
     environment:
-      - DB_NAME=myappdb
-      - DB_USER=myappuser
-      - DB_PASSWORD=myapppassword
+      - DB_NAME=free-pooch
+      - DB_USER=pooch
+      - DB_PASSWORD=pooch
       - DB_HOST="db"
-      - DB_PORT=5432
+      - DB_PORT=27017
       - NODE_ENV=development
     links:
       - db:db
@@ -61,8 +61,10 @@ services:
     build:
       context: ../.
       dockerfile: docker/db/Dockerfile.dev
-    env_file: db/psql.env
+    environment:
+      MONGODB_USERNAME: pooch
+      MONGODB_PASSWORD: pooch
+      MONGODB_DBNAME: free-pooch
     image: myapp-db
-    env_file: ../docker/db/psql.env
     ports:
-      - '5431:5432'
+      - '27017:27017'

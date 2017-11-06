@@ -2,7 +2,26 @@ import React, { Component } from 'react';
 import TodoItem from './TodoItem';
 import { Text, View, StyleSheet } from 'react-primitives';
 import DoneIcon from './components/Icons/DoneIcon';
+import { compose, withProps } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
+const MyMapComponent = compose(
+  withProps({
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    loadingElement: <div style={{ height: `100%` }} />,
+    containerElement: <div style={{ height: `400px` }} />,
+    mapElement: <div style={{ height: `100%` }} />,
+  }),
+  withScriptjs,
+  withGoogleMap
+)((props) =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+  </GoogleMap>
+) 
 const API_URL = '/api';
 
 const styles = StyleSheet.create({
@@ -103,6 +122,7 @@ class App extends Component {
         <View style={styles.layout}>
           <View style={styles.header}>
             <Text style={styles.title}>React Bucket   NGGAZZZsadasdList</Text>
+            <MyMapComponent isMarkerShown />// Map with a Marker
           </View>
           <View style={styles.list}>
             {this.state.todoitems.map((el, index) => {
