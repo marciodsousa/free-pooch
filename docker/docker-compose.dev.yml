@@ -16,8 +16,8 @@ services:
     ports:
       - '80:80' # Connect localhost 80 port to container 80 port
     links: # Link services to access http://app and  http://api inside the container
-      - api:api
-      - app:app
+      - api
+      - app
   app:
     build:
       context: ../.
