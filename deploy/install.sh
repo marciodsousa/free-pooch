@@ -9,10 +9,10 @@ mv do_deploy_key ~/.ssh/id_rsa
 npm install -g yarn
 npm install -g webpack
 
-cd client
+cd app
 yarn
 
-cd ../server
+cd ../api
 yarn
 
 # cd ..
