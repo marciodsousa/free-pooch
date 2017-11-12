@@ -1,0 +1,5 @@
+FROM nginx
+
+ADD /config/nginx/nginx.prd.conf /etc/nginx/nginx.conf
+
+EXPOSE 80

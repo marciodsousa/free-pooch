@@ -1,0 +1,60 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ../.
+      dockerfile: docker/server/Dockerfile.prd
+    image: myapp-server
+    deploy:
+      resources: # Set these values when you know what you do!
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
+    ports:
+      - '80:80' # Connect localhost 80 port to container 80 port
+    links: # Link services to access http://app and  http://api inside the container
+      - api
+    volumes:
+      - ./../app:/usr/src/app
+  api:
+    deploy:
+      resources: # Set these values when you know what you do!
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
+    build:
+      context: ../.
+      dockerfile: docker/api/Dockerfile.dev
+    image: myapp-api
+    environment:
+      - DB_NAME=free-pooch
+      - DB_USER=pooch
+      - DB_PASSWORD=pooch
+      - DB_HOST="db"
+      - DB_PORT=27017
+      - NODE_ENV=development
+    links:
+      - db:db
+    volumes:
+      - ./../api:/usr/src/api
+    ports:
+      - '8080'
+    depends_on:
+      - "db"
+  db:
+    build:
+      context: ../.
+      dockerfile: docker/db/Dockerfile.dev
+    environment:
+      MONGODB_USERNAME: pooch
+      MONGODB_PASSWORD: pooch
+      MONGODB_DBNAME: free-pooch
+    image: myapp-db
+    ports:
+      - '27017:27017'

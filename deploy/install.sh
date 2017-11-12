@@ -15,5 +15,6 @@ yarn
 cd ../api
 yarn
 
-# cd ..
-# docker-compose stop && docker-compose up
+cd ..
+yarn prd:down
+yarn prd:up
