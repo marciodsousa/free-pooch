@@ -3,7 +3,7 @@ services:
   server:
     build:
       context: ../.
-      dockerfile: docker/server/Dockerfile.prd
+      dockerfile: docker/server/Dockerfile.prod
     image: myapp-server
     deploy:
       resources: # Set these values when you know what you do!

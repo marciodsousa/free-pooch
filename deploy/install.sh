@@ -16,5 +16,5 @@ cd ../api
 yarn
 
 cd ..
-yarn prd:down
-yarn prd:up
+yarn prod:down
+yarn prod:up
