@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd client
+cd app
 webpack
