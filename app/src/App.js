@@ -121,7 +121,7 @@ class App extends Component {
       <View style={styles.body}>
         <View style={styles.layout}>
           <View style={styles.header}>
-            <Text style={styles.title}>React Bucket   NGGAZZZsadasdList</Text>
+            <Text style={styles.title}>React Map view isnaice</Text>
             <MyMapComponent isMarkerShown />// Map with a Marker
           </View>
           <View style={styles.list}>
