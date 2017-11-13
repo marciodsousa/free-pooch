@@ -2,3 +2,4 @@
 
 cd app
 webpack
+ls -l -a
