@@ -5,5 +5,6 @@ cd /var/www && \
 rm -r free-pooch
 tar zxf free-pooch.tgz -C . && \
 rm free-pooch.tgz
+cd free-pooch
 yarn prod:stop
 yarn prod:start
