@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(
   <AppContainer>
@@ -11,6 +11,9 @@ ReactDOM.render(
   </AppContainer>,
   document.getElementById('root')
 );
+
+
+
 
 // Hot Module Replacement API
 if (module.hot) {
