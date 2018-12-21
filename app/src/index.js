@@ -5,10 +5,14 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.scss';
 
+import { Provider } from 'react-redux'
+import store from "./store"
+
+
 ReactDOM.render(
-  <AppContainer>
-    <App/>
-  </AppContainer>,
+  <Provider store={store}>
+      <App/>
+  </Provider>,
   document.getElementById('root')
 );
 
@@ -20,9 +24,9 @@ if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('./App').default;
     ReactDOM.render(
-      <AppContainer>
-        <NextApp/>
-      </AppContainer>,
+      <Provider store={store}>
+          <NextApp/>
+      </Provider>,
       document.getElementById('root')
     );
   });

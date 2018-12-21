@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { compose, withProps } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 import './searchContent.scss';
+import SearchResultsPanel from './SearchResultsPanel';
 
 const MyMapComponent = compose(
   withProps({
@@ -35,6 +36,7 @@ class SearchContent extends Component {
         <div className="searchmap__container">
              <MyMapComponent isMarkerShown />
         </div>
+        <SearchResultsPanel articles={this.state.articles}/>
         <div className="searchlist__container">
             { this.state.searchResults.length > 0 &&
                 <div>

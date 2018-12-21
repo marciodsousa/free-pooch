@@ -17,7 +17,7 @@ const HotModuleReplacementPluginConfig = new webpack.HotModuleReplacementPlugin(
 
 module.exports = {
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     'react-hot-loader/patch',
     './src/index.js',
   ],
@@ -169,5 +169,6 @@ module.exports = {
     publicPath: '/',
     historyApiFallback: true,
     disableHostCheck: true,
+    hot: true
   },
 };

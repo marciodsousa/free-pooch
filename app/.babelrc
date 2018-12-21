@@ -1,9 +1,21 @@
 {
     "presets": [
-        "es2015",
-        "react"
+        [
+			"@babel/preset-env",
+			{
+				"targets": {
+					"browsers": ["last 2 versions", "safari >= 7"]
+				},
+				"include": ["transform-arrow-functions", "es6.map"],
+				"useBuiltIns": "usage",
+				"shippedProposals": true
+			}
+		],
+        "@babel/react"
     ],
     "plugins": [
-        "react-hot-loader/babel"
+        "react-hot-loader/babel",
+        "@babel/plugin-transform-spread",
+        "@babel/plugin-proposal-class-properties"
     ]
 }
